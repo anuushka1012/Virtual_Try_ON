@@ -1,0 +1,233 @@
+/* styles.css */
+
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Fullscreen canvas for background animations */
+#animationCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+header {
+    background-color: #1f1f1f;
+    padding: 1rem;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 0 1rem;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #e0e0e0;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    color: #bb86fc;
+}
+
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+h1, h2 {
+    color: #bb86fc;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input[type="file"],
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+}
+
+button {
+    background-color: #bb86fc;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    color: #121212;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #9a67ea;
+}
+
+.result, .error {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.result {
+    background-color: #2a2a2a;
+}
+
+.error {
+    background-color: #ff4c4c;
+    color: #121212;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #1f1f1f;
+    margin-top: 2rem;
+}
+/* -------------------------------
+   SIDE-BY-SIDE IMAGE UPLOAD
+-------------------------------- */
+.image-upload-row {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap; /* allows wrapping on smaller screens */
+    margin-bottom: 1.5rem;
+}
+
+.upload-box {
+    background-color: #2a2a2a;
+    border: 2px dashed #bb86fc;
+    border-radius: 4px;
+    padding: 1rem;
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    transition: border-color 0.3s;
+}
+
+.upload-box:hover {
+    border-color: #a96afc;
+}
+
+.upload-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #bb86fc;
+}
+
+/* Hide the original file input; user clicks the box instead */
+.upload-box input[type="file"] {
+    display: none;
+}
+.form-group select {
+    background-color: #2a2a2a;
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 0.5rem;
+    color: #f2f2f2;
+    font-size: 0.95rem;
+    width: 100%;
+}
+
+/* Preview image styling */
+.upload-box img {
+    margin-top: 1rem;
+    max-width: 100%;
+    border-radius: 4px;
+    object-fit: cover;
+    box-shadow: 0 0 8px rgba(187, 134, 252, 0.5);
+}
+.diagram-container {
+    max-width: 720px;
+    margin: 1rem auto;  /* centers the container and adds vertical spacing */
+    overflow: hidden;
+    border: 2px solid #bb86fc;
+    border-radius: 4px;
+    padding: 0.5rem;
+    background-color: #1e1e1e;
+}
+
+.diagram-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+/* Ensure the html and body occupy the full viewport height */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: sans-serif;
+    background-color: #121212; /* Fallback background color */
+    color: #fff;
+}
+
+/* The main container for header, main, and footer */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;   /* Forces container to fill entire viewport */
+    position: relative;  /* For absolutely positioned canvas */
+}
+
+/* Header, main, and footer are placed above the canvas (z-index) */
+header, main, footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* The main section flexes to fill the space between header and footer */
+main {
+    flex: 1; /* This pushes footer down if content is short */
+}
+
+/* Footer styling */
+footer {
+    background-color: #1f1f1f;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Fullscreen particle background behind all content */
+#animationCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* behind header, main, and footer */
+}

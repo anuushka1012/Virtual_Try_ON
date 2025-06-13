@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}IDM-VTON{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <!-- A container that spans the full viewport height -->
+    <div class="page-container">
+        <!-- Particle background canvas -->
+        <canvas id="animationCanvas"></canvas>
+        
+        <!-- Site Header -->
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/details">About IDM-VTON</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <!-- Main Content -->
+        <main>
+           {% block content %}
+           {% endblock %}
+        </main>
+        
+        <!-- Footer (pinned at bottom if content is short) -->
+        <footer>
+            <p>&copy; 2025 IDM-VTON Project. All rights reserved.</p>
+        </footer>
+    </div>
+    
+    <!-- Particle animation script -->
+    <script src="/static/js/animations.js"></script>
+</body>
+</html>

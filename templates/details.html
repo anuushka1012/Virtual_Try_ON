@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}About IDM-VTON{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>About IDM-VTON</h1>
+    
+    <section class="description">
+        <p>IDM-VTON is a cutting-edge virtual try-on system that leverages advanced AI and deep learning techniques to simulate clothing on human images seamlessly. The system processes input images through multiple stages—from preprocessing and segmentation to garment warping and synthesis—to generate realistic try-on results.</p>
+        <p>Our model is designed to capture both human body structure and garment details, ensuring the final output is natural and photo-realistic. By integrating state-of-the-art methods, IDM-VTON adapts to various body types and garment styles.</p>
+    </section>
+    
+    <section class="architecture">
+        <h2>Architecture Diagram</h2>
+        <p>The diagram below outlines the key components of the IDM-VTON pipeline:</p>
+        <div class="diagram-container">
+            <img src="https://idm-vton.github.io/pipeline.jpeg" alt="IDM-VTON Architecture Diagram">
+        </div>
+        <p>This pipeline integrates stages such as image preprocessing, segmentation, garment warping, and final image synthesis. Each stage is meticulously designed to maintain the natural appearance of the try-on output.</p>
+    </section>
+    
+    <section class="model-details">
+        <h2>Model Details</h2>
+        <p>The IDM-VTON model is composed of several critical modules:</p>
+        <ul>
+            <li><strong>Preprocessing:</strong> Normalizes and prepares input images for further analysis.</li>
+            <li><strong>Segmentation:</strong> Utilizes deep learning to accurately segment the human figure and garment regions.</li>
+            <li><strong>Garment Warping:</strong> Applies deformation networks to adapt garment shapes to the human pose.</li>
+            <li><strong>Synthesis:</strong> Combines processed elements to generate a cohesive and realistic try-on image.</li>
+        </ul>
+        <p>This modular design allows for fine-tuning each stage, leading to improved performance and versatility across various garment types and poses.</p>
+    </section>
+    
+    <section class="authors">
+        <h2>Project Authors</h2>
+        <ul>
+            <li>Ms. Snehal Bagal <strong>(Corresponding Author)</strong> - <a href="mailto:snehal.bagal@aissmsioit.org">snehal.bagal@aissmsioit.org</a></li>
+            <li>Ms. Anushka Mane - <a href="mailto:anushkamane.10@gmail.com">anushkamane.10@gmail.com</a></li>
+            <li>Ms. Samruddhi Navaghane - <a href="mailto:samnavaghane11@gmail.com">samnavaghane11@gmail.com</a></li>
+            <li>Mr. Eeshan Prabhu - <a href="mailto:eeshanprabhu29@gmail.com">eeshanprabhu29@gmail.com</a></li>
+            <li>Mr. Atharva More - <a href="mailto:moreatharva193@gmail.com">moreatharva193@gmail.com</a></li>
+        </ul>
+        <p><em>Artificial Intelligence and Data Science, AISSMS, IOIT, Maharashtra, India</em></p>
+    </section>
+</div>
+{% endblock %}

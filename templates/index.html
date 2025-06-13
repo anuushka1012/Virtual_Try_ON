@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}IDM-VTON - Home{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Welcome to IDM-VTON Try-On</h1>
+
+    <form action="/" method="post" enctype="multipart/form-data">
+        
+        <!-- Side-by-side upload boxes -->
+        <div class="image-upload-row">
+            <!-- Human image upload box -->
+            <div class="upload-box" onclick="document.getElementById('human_image').click()">
+                <label for="human_image" class="upload-label">Click to Upload Human Image</label>
+                <!-- Hidden file input -->
+                <input 
+                    type="file" 
+                    id="human_image" 
+                    name="human_image" 
+                    accept="image/*" 
+                    required 
+                    onchange="previewImage(event, 'human_image_preview')"
+                >
+                <!-- Preview container -->
+                <img id="human_image_preview" alt="Preview" style="display: none;" />
+            </div>
+
+            <!-- Cloth image upload box -->
+            <div class="upload-box" onclick="document.getElementById('cloth_image').click()">
+                <label for="cloth_image" class="upload-label">Click to Upload Clothing Image</label>
+                <!-- Hidden file input -->
+                <input 
+                    type="file" 
+                    id="cloth_image" 
+                    name="cloth_image" 
+                    accept="image/*" 
+                    required
+                    onchange="previewImage(event, 'cloth_image_preview')"
+                >
+                <!-- Preview container -->
+                <img id="cloth_image_preview" alt="Preview" style="display: none;" />
+            </div>
+        </div>
+
+        <!-- Dropdown for Category -->
+        <div class="form-group">
+            <label for="category">Category</label>
+            <select id="category" name="category" required>
+                <option value="">Select Category</option>
+                <option value="upper_body">Upper Body</option>
+                <option value="lower_body">Lower Body</option>
+                <option value="dresses">Dresses</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="garment_desc">Garment Description</label>
+            <textarea id="garment_desc" name="garment_desc" rows="3" placeholder="Enter garment details" required></textarea>
+        </div>
+        
+        <!-- Submit button -->
+        <button type="submit">Generate Try-On</button>
+    </form>
+
+    <!-- Display result or error -->
+    {% if result_url %}
+      <div class="result">
+         <h2>Result</h2>
+         <img src="{{ result_url }}" alt="Generated Try-On Image">
+      </div>
+    {% endif %}
+    {% if error %}
+      <div class="error">
+         <p>{{ error }}</p>
+      </div>
+    {% endif %}
+</div>
+
+<!-- Inline script for image previews -->
+<script>
+function previewImage(event, previewId) {
+    const file = event.target.files[0];
+    if (!file) return;
+    const preview = document.getElementById(previewId);
+    preview.src = URL.createObjectURL(file);
+    preview.style.display = 'block';
+}
+</script>
+
+{% endblock %}
